@@ -407,7 +407,9 @@ export default function BallByBallPage() {
                       const isExpanded = selectedBall === ballKey
                       const userVote = userBallVotes[ballKey]
                       const isCorrect =
-                        ball.actual.type === ball.prediction.type && ball.actual.runs === ball.prediction.runsPredict
+                        ball.actual &&
+                        ball.actual.type === ball.prediction.type &&
+                        ball.actual.runs === ball.prediction.runsPredict
                       const userAccuracy = getUserVoteAccuracy(ballKey, ball.actual)
                       const totalVotes = getTotalVotesForBall(ball)
 
